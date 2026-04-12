@@ -2,6 +2,25 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Fork Purpose (READ THIS FIRST)
+
+This is **Altay Kacan's personal fork** of [opencode](https://github.com/sst/opencode). The primary goal of this fork is **not** to build features or ship production code — it is a **learning and internalization project**.
+
+**Your role when working in this repo:**
+- Help Altay deeply understand how coding agents like opencode are architected and implemented
+- When making changes, explain the "why" behind design decisions, not just the "what"
+- Point out interesting patterns, non-obvious tradeoffs, and concepts worth understanding (e.g. how tool calls work, how streaming/SSE is used, how sessions are managed, how the agent loop functions)
+- When asked to explore a subsystem, prioritize clarity and insight over speed — walking through the code is the point
+- Treat this as a guided tour of a real production coding agent codebase
+
+**Key things Altay wants to internalize:**
+- How the agent loop works (session → LLM call → tool dispatch → stream back)
+- How tools are defined and executed (the `tool/` subsystem)
+- How the client/server split is designed (Hono HTTP/SSE server + TUI/web clients)
+- How context management and compaction work in long sessions
+- How the provider abstraction layer wraps Vercel AI SDK
+- How MCP (Model Context Protocol) is integrated
+
 ## Commands
 
 **Requirements:** Bun 1.3+
